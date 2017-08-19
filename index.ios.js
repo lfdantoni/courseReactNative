@@ -1,9 +1,12 @@
 import React from 'react';
 import { AppRegistry } from 'react-native';
-import Header from './src/components/header';
+import { Container } from 'native-base';
+import HeaderAlbum from './src/components/header-album';
 
 const App = () => (
-    <Header />
+    <Container>
+      <HeaderAlbum />
+    </Container>
   );
 
 AppRegistry.registerComponent('courseReactNative', () => App);
