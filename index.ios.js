@@ -1,11 +1,13 @@
 import React from 'react';
 import { AppRegistry } from 'react-native';
 import { Container } from 'native-base';
-import HeaderAlbum from './src/components/header-album';
+import AlbumHeader from './src/components/album-header';
+import AlbumList from './src/components/album-list';
 
 const App = () => (
     <Container>
-      <HeaderAlbum />
+      <AlbumHeader headerText={'Albums'} />
+      <AlbumList />
     </Container>
   );
 
