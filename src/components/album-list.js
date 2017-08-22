@@ -1,16 +1,27 @@
 import React from 'react';
-import { Text } from 'native-base';
+import { Container, Content } from 'native-base';
 import axios from 'axios';
+import AlbumDetail from './album-detail';
 
 class AlbumList extends React.Component {
     state = { albums: [] };
-    componentWillMount(){
+    componentWillMount() {
         axios.get('https://rallycoding.herokuapp.com/api/music_albums')
-            .then(response => this.setState(response.data));
+            .then(response => this.setState({ albums: response.data }));
+    }
+    renderAlbums() {
+        return this.state.albums.map(album => 
+            <AlbumDetail key={album.title} album={album} />
+        );
     }
     render() {
+        console.log(this.state);
         return (
-            <Text>sdfsdfsd</Text>
+            <Container>
+                <Content>
+                    {this.renderAlbums()}
+                </Content>
+            </Container>
         );
     }
 }
